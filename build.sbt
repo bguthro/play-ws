@@ -160,11 +160,11 @@ lazy val commonSettings = Def.settings(
 )
 
 lazy val shadedCommonSettings = Seq(
-  // scalaVersion := scala213,
+  scalaVersion := scala213,
   // crossScalaVersions := Seq(scala213),
   // No need to cross publish the shaded libraries
-  crossPaths       := false,
-  autoScalaLibrary := false,
+  crossPaths       := true,
+  autoScalaLibrary := true,
 )
 
 lazy val shadeAssemblySettings = commonSettings ++ shadedCommonSettings ++ Seq(
