@@ -7,7 +7,7 @@ package play.api.libs.ws.ahc
 import java.nio.charset.StandardCharsets
 import java.util
 
-import akka.util.ByteString
+import org.apache.pekko.util.ByteString
 import org.specs2.mock.Mockito
 import org.specs2.mutable.Specification
 import play.api.libs.ws._

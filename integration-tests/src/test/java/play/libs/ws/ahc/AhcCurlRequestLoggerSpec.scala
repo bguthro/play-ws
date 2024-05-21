@@ -4,7 +4,7 @@
 
 package play.libs.ws.ahc
 
-import akka.http.scaladsl.server.Route
+import org.apache.pekko.http.scaladsl.server.Route
 import org.specs2.concurrent.{ ExecutionEnv, FutureAwait }
 import org.specs2.mutable.Specification
 import play.AkkaServerProvider
@@ -22,7 +22,7 @@ class AhcCurlRequestLoggerSpec(implicit val executionEnv: ExecutionEnv) extends 
   with DefaultBodyWritables {
 
   override def routes: Route = {
-    import akka.http.scaladsl.server.Directives._
+    import org.apache.pekko.http.scaladsl.server.Directives._
     get {
       complete("<h1>Say hello to akka-http</h1>")
     } ~

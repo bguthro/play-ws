@@ -4,11 +4,11 @@
 
 package play.api.libs.ws.ahc
 
-import akka.Done
+import org.apache.pekko.Done
 import javax.inject.Inject
-import akka.stream.Materializer
-import akka.stream.scaladsl.Source
-import akka.util.ByteString
+import org.apache.pekko.stream.Materializer
+import org.apache.pekko.stream.scaladsl.Source
+import org.apache.pekko.util.ByteString
 import com.typesafe.sslconfig.ssl.SystemConfiguration
 import org.reactivestreams.Publisher
 import org.reactivestreams.Subscriber

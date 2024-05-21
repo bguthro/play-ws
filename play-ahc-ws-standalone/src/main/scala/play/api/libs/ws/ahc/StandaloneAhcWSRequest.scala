@@ -8,8 +8,8 @@ import java.io.UnsupportedEncodingException
 import java.net.URI
 import java.nio.charset.{ Charset, StandardCharsets }
 
-import akka.stream.Materializer
-import akka.stream.scaladsl.Sink
+import org.apache.pekko.stream.Materializer
+import org.apache.pekko.stream.scaladsl.Sink
 import play.api.libs.ws.{ StandaloneWSRequest, _ }
 import play.shaded.ahc.io.netty.buffer.Unpooled
 import play.shaded.ahc.io.netty.handler.codec.http.HttpHeaders

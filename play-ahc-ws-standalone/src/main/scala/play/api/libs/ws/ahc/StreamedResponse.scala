@@ -4,8 +4,8 @@
 
 package play.api.libs.ws.ahc
 
-import akka.stream.scaladsl.Source
-import akka.util.ByteString
+import org.apache.pekko.stream.scaladsl.Source
+import org.apache.pekko.util.ByteString
 import org.reactivestreams.Publisher
 import play.api.libs.ws.{ StandaloneWSResponse, WSCookie }
 import play.shaded.ahc.org.asynchttpclient.HttpResponseBodyPart
@@ -18,8 +18,8 @@ import play.shaded.ahc.org.asynchttpclient.HttpResponseBodyPart
  * {{{
  * import scala.concurrent.{ ExecutionContext, Future }
  *
- * import akka.util.ByteString
- * import akka.stream.scaladsl.Source
+ * import org.apache.pekko.util.ByteString
+ * import org.apache.pekko.stream.scaladsl.Source
  *
  * import play.api.libs.ws.DefaultBodyReadables._
  * import play.api.libs.ws.ahc.StandaloneAhcWSClient

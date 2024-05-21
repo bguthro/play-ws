@@ -4,9 +4,9 @@
 
 package play.api.libs.ws.ahc.cache
 
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.model.headers._
-import akka.http.scaladsl.server.Route
+import org.apache.pekko.http.scaladsl.model._
+import org.apache.pekko.http.scaladsl.model.headers._
+import org.apache.pekko.http.scaladsl.server.Route
 import org.specs2.concurrent.ExecutionEnv
 import org.specs2.matcher.FutureMatchers
 import org.specs2.mock.Mockito
@@ -31,7 +31,7 @@ class CachingSpec(implicit val executionEnv: ExecutionEnv) extends Specification
   }
 
   override val routes: Route = {
-    import akka.http.scaladsl.server.Directives._
+    import org.apache.pekko.http.scaladsl.server.Directives._
     path("hello") {
       respondWithHeader(RawHeader("Cache-Control", "public")) {
         val httpEntity = HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Say hello to akka-http</h1>")

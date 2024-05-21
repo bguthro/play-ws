@@ -4,9 +4,9 @@
 
 package play.libs.ws.ahc
 
-import akka.http.scaladsl.server.Route
-import akka.stream.javadsl.Sink
-import akka.util.ByteString
+import org.apache.pekko.http.scaladsl.server.Route
+import org.apache.pekko.stream.javadsl.Sink
+import org.apache.pekko.util.ByteString
 import org.specs2.concurrent.ExecutionEnv
 import org.specs2.matcher.FutureMatchers
 import org.specs2.mutable.Specification
@@ -25,7 +25,7 @@ class AhcWSClientSpec(implicit val executionEnv: ExecutionEnv) extends Specifica
   with XMLBodyReadables {
 
   override val routes: Route = {
-    import akka.http.scaladsl.server.Directives._
+    import org.apache.pekko.http.scaladsl.server.Directives._
     get {
       complete("<h1>Say hello to akka-http</h1>")
     } ~

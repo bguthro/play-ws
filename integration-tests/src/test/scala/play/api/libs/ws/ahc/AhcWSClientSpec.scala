@@ -4,13 +4,13 @@
 
 package play.api.libs.ws.ahc
 
-import akka.http.scaladsl.model.StatusCodes.Redirection
-import akka.http.scaladsl.model.headers.{ HttpCookie, RawHeader }
-import akka.http.scaladsl.model.{ StatusCode, StatusCodes }
-import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.{ MissingCookieRejection, Route }
-import akka.stream.scaladsl.Sink
-import akka.util.ByteString
+import org.apache.pekko.http.scaladsl.model.StatusCodes.Redirection
+import org.apache.pekko.http.scaladsl.model.headers.{ HttpCookie, RawHeader }
+import org.apache.pekko.http.scaladsl.model.{ StatusCode, StatusCodes }
+import org.apache.pekko.http.scaladsl.server.Directives._
+import org.apache.pekko.http.scaladsl.server.{ MissingCookieRejection, Route }
+import org.apache.pekko.stream.scaladsl.Sink
+import org.apache.pekko.util.ByteString
 import org.specs2.concurrent.{ ExecutionEnv, FutureAwait }
 import org.specs2.execute.Result
 import org.specs2.matcher.FutureMatchers

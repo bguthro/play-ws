@@ -7,9 +7,9 @@ package play.api.libs.ws.ahc
 import scala.collection.JavaConverters._
 import scala.concurrent.duration._
 
-import akka.actor.ActorSystem
-import akka.stream.Materializer
-import akka.util.ByteString
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.stream.Materializer
+import org.apache.pekko.util.ByteString
 
 import org.specs2.execute.Result
 import org.specs2.mock.Mockito

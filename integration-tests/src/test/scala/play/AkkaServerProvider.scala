@@ -4,15 +4,15 @@
 
 package play
 
-import akka.actor.ActorSystem
-import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Route
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.http.scaladsl.Http
+import org.apache.pekko.http.scaladsl.server.Route
 import org.specs2.concurrent.ExecutionEnv
 import org.specs2.specification.BeforeAfterAll
 
 import scala.concurrent.duration._
 import scala.concurrent.{ Await, Future }
-import akka.stream.Materializer
+import org.apache.pekko.stream.Materializer
 
 trait AkkaServerProvider extends BeforeAfterAll {
 

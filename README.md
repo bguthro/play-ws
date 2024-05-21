@@ -106,8 +106,8 @@ Note that there is a special case: when you are streaming the response, then you
 
 ```scala
 import scala.concurrent.ExecutionContext
-import akka.util.ByteString
-import akka.stream.scaladsl.Source
+import org.apache.pekko.util.ByteString
+import org.apache.pekko.stream.scaladsl.Source
 import play.api.libs.ws.StandaloneWSClient
 
 def useWSStream(ws: StandaloneWSClient)(implicit ec: ExecutionContext) =
@@ -148,7 +148,7 @@ implicit val fooBodyReadable = BodyReadable[Foo] { response =>
 or custom BodyWritable:
 
 ```scala
-import akka.util.ByteString
+import org.apache.pekko.util.ByteString
 import play.api.libs.ws.{ BodyWritable, InMemoryBody }
 
 implicit val writeableOf_Foo: BodyWritable[Foo] = {
@@ -240,8 +240,8 @@ In Scala, the way to call out to a web service and close down the client:
 ```scala
 package playwsclient
 
-import akka.actor.ActorSystem
-import akka.stream.Materializer
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.stream.Materializer
 import play.api.libs.ws._
 import play.api.libs.ws.ahc._
 
@@ -287,8 +287,8 @@ In Java the API is much the same, except that an instance of AsyncHttpClient has
 ```java
 package playwsclient;
 
-import akka.actor.ActorSystem;
-import akka.stream.Materializer;
+import org.apache.pekko.actor.ActorSystem;
+import org.apache.pekko.stream.Materializer;
 import com.typesafe.config.ConfigFactory;
 
 import play.libs.ws.*;

@@ -4,9 +4,9 @@
 
 package play.libs.ws.ahc
 
-import akka.http.scaladsl.model.{ ContentTypes, HttpEntity }
-import akka.http.scaladsl.model.headers.RawHeader
-import akka.http.scaladsl.server.Route
+import org.apache.pekko.http.scaladsl.model.{ ContentTypes, HttpEntity }
+import org.apache.pekko.http.scaladsl.model.headers.RawHeader
+import org.apache.pekko.http.scaladsl.server.Route
 import org.specs2.concurrent.ExecutionEnv
 import org.specs2.matcher.FutureMatchers
 import org.specs2.mutable.Specification
@@ -18,7 +18,7 @@ import scala.compat.java8.FutureConverters
 class AhcWSRequestFilterSpec(implicit val executionEnv: ExecutionEnv) extends Specification with AkkaServerProvider with StandaloneWSClientSupport with FutureMatchers {
 
   override val routes: Route = {
-    import akka.http.scaladsl.server.Directives._
+    import org.apache.pekko.http.scaladsl.server.Directives._
     headerValueByName("X-Request-Id") { value =>
       respondWithHeader(RawHeader("X-Request-Id", value)) {
         val httpEntity = HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Say hello to akka-http</h1>")
