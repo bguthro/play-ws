@@ -120,7 +120,8 @@ lazy val shadedCommonSettings = Seq(
   crossScalaVersions := Seq(scala213),
 
   // No need to cross publish the shaded libraries
-  crossPaths := false,
+  crossPaths := true,
+  autoScalaLibrary := true,
 )
 
 lazy val shadeAssemblySettings = commonSettings ++ shadedCommonSettings ++ Seq(
@@ -379,7 +380,7 @@ lazy val `integration-tests` = project.in(file("integration-tests"))
     fork in Test := true,
     concurrentRestrictions += Tags.limitAll(1), // only one integration test at a time
     testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v")),
-    libraryDependencies ++= akkaHttp.map(_ % Test) ++ testDependencies
+    libraryDependencies ++= pekkoHttp.map(_ % Test) ++ testDependencies
   )
   .settings(shadedAhcSettings)
   .settings(shadedOAuthSettings)

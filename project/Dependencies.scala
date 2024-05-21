@@ -48,15 +48,15 @@ object Dependencies {
   val asyncHttpClientVersion = "2.10.5"
   val asyncHttpClient = Seq("org.asynchttpclient" % "async-http-client" % asyncHttpClientVersion)
 
-  val akkaVersion = "2.6.1"
-  val akkaStreams = Seq("com.typesafe.akka" %% "akka-stream" % akkaVersion)
-  val akkaHttp = Seq("com.typesafe.akka" %% "akka-http" % "10.1.11")
+  val pekkoVersion = "1.0.1"
+  val pekkoStreams = Seq("org.apache.pekko" %% "pekko-stream" % pekkoVersion)
+  val pekkoHttp = Seq("org.apache.pekko" %% "pekko-http" % "1.0.1")
 
   val reactiveStreams = Seq("org.reactivestreams" % "reactive-streams" % "1.0.3")
 
   val testDependencies = (specsBuild ++ junitInterface ++ assertj ++ awaitility ++ slf4jtest ++ logback).map(_ % Test)
 
-  val standaloneApiWSDependencies = javaxInject ++ sslConfigCore ++ akkaStreams ++ testDependencies
+  val standaloneApiWSDependencies = javaxInject ++ sslConfigCore ++ pekkoStreams ++ testDependencies
 
   def standaloneAhcWSDependencies(scalaVersion: String) = scalaJava8Compat(scalaVersion) ++ cachecontrol ++ slf4jApi ++ reactiveStreams ++ testDependencies
 
