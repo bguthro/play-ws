@@ -117,7 +117,7 @@ val disablePublishing = Seq[Setting[_]](
 
 lazy val shadedCommonSettings = Seq(
   scalaVersion := scala213,
-  crossScalaVersions := Seq(scala213),
+  crossScalaVersions := Seq(scala213, scala212),
 
   // No need to cross publish the shaded libraries
   crossPaths := true,
@@ -422,7 +422,7 @@ lazy val root = project
   .settings(formattingSettings)
   .settings(disableDocs)
   .settings(disablePublishing)
-  .settings(crossScalaVersions := Seq(scala213))
+  .settings(crossScalaVersions := Seq(scala213, scala212))
   .aggregate(
     `shaded`,
     `play-ws-standalone`,
