@@ -23,7 +23,7 @@ object Dependencies {
 
   def scalaJava8Compat(scalaVersion: String) = Seq("org.scala-lang.modules" %% "scala-java8-compat" % (CrossVersion.partialVersion(scalaVersion) match {
      case Some((2, major)) if major >= 13 => "1.0.2"
-     case _                               => "0.9.1"
+     case _                               => "1.0.2"
    }))
 
   val playJsonVersion = "2.8.2"
